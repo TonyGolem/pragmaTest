@@ -1,0 +1,37 @@
+<p>LA RESPUESTA DEL API NO TRAE FOTOS PARA PONERLE A LA TARJETA </p>
+<p>THE RESPONSE FROM THE API DOES NOT BRING PHOTOS TO PUT ON THE CARD </p>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let cat of catBreeds">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{cat.name}}</mat-card-title>
+
+          <mat-card-subtitle>nombre alternativo: {{cat.alt_names}}</mat-card-subtitle>
+
+
+          <!-- RETIRADO POR ASINCRONIA -->
+          <!-- <ng-container *ngIf="cat.alt_names.length; else noAltName">
+          </ng-container>
+          <ng-template #noAltName>
+          </ng-template> -->
+
+
+        </mat-card-header>
+        <img mat-card-image src="../assets/Main/fotoGato.png" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p style="text-align: justify; padding: 10px;">
+            {{cat.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button type="button" class="btn btn-primary" style="margin-left: 15px !important;"
+            (click)="seeMore(cat.id)">Ver más</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
